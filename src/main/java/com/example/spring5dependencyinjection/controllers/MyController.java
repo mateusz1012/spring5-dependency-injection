@@ -1,13 +1,19 @@
 package com.example.spring5dependencyinjection.controllers;
 
+import com.example.spring5dependencyinjection.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class MyController {
 
-    public String sayHello() {
-        System.out.println("Witam!");
+    private final GreetingService greetingService;
 
-        return "Czesc Mati";
+    public MyController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
+    public String sayHello() {
+
+        return greetingService.sayGreeting();
     }
 }

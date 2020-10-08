@@ -1,9 +1,6 @@
 package com.example.spring5dependencyinjection;
 
-import com.example.spring5dependencyinjection.controllers.ConstructorInjectedController;
-import com.example.spring5dependencyinjection.controllers.MyController;
-import com.example.spring5dependencyinjection.controllers.PropertyInjectedController;
-import com.example.spring5dependencyinjection.controllers.SetterInjectedController;
+import com.example.spring5dependencyinjection.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,6 +10,9 @@ public class Spring5DependencyInjectionApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(Spring5DependencyInjectionApplication.class, args);
+
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println(i18nController.sayHello());
 
 		MyController myController = (MyController) ctx.getBean("myController");
 

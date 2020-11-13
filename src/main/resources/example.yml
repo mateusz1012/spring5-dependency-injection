@@ -1,0 +1,35 @@
+# this is a example comment
+
+name: Matt
+
+names: #Comment
+  - Paul
+  - John
+  - Eric
+
+pound_sign: "#"
+
+book:
+  author: George Martin
+  publisher: Helion
+
+truth: yes
+
+another_truth: True
+
+more_true: true
+
+false: no #No, false, FALSE
+
+string_val: "This is it's quote"
+
+colon_string: "my dog: one two"
+
+include_new_lines: |
+  saudbsai asbdasbdsa
+  asidasbnod asdoasdas
+
+igonre_new_lines: >
+  this is
+  just one long
+  string

@@ -1,0 +1,5 @@
+mat:
+  jms:
+    username: JSM Username
+    password: somepass
+    url: SomeURL

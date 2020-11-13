@@ -3,3 +3,10 @@ mat:
     username: JSM Username
     password: somepass
     url: SomeURL
+
+---
+spring:
+  profiles: de
+mat:
+  jms:
+    username: JSM Username $$$$$$

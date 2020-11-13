@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class MyController {
 
-    private final GreetingService greetingService;
+    private GreetingService greetingService;
 
     public MyController(GreetingService greetingService) {
         this.greetingService = greetingService;

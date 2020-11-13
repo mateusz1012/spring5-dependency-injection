@@ -1,21 +1,23 @@
 package com.example.spring5dependencyinjection.controllers;
 
-import com.example.spring5dependencyinjection.services.ConstructorGreetingService;
+import com.example.spring5dependencyinjection.services.GreetingServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class SetterInjectedControllerTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-    SetterInjectedController setterInjectedController;
+class GetterInjectedControllerTest {
+
+    private GetterInjectedController getterInjectedController;
 
     @BeforeEach
-    void setUp() {
-        setterInjectedController = new SetterInjectedController();
-        setterInjectedController.setGreetingService(new ConstructorGreetingService());
+    public void setUp() {
+        this.getterInjectedController = new GetterInjectedController();
+        this.getterInjectedController.setGreetingService(new GreetingServiceImpl());
     }
 
     @Test
-    void getGreeting() {
-        System.out.println(setterInjectedController.getGreeting());
+    public void testGreeting() {
+        assertEquals(GreetingServiceImpl.HELLO_MATI, getterInjectedController.sayHello());
     }
 }

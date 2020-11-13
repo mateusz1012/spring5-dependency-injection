@@ -1,8 +1,11 @@
 package com.example.spring5dependencyinjection.controllers;
 
 import com.example.spring5dependencyinjection.services.ConstructorGreetingService;
+import com.example.spring5dependencyinjection.services.GreetingServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PropertyInjectedControllerTest {
 
@@ -12,12 +15,12 @@ class PropertyInjectedControllerTest {
     void setUp() {
         propertyInjectedController = new PropertyInjectedController();
 
-        propertyInjectedController.greetingService = new ConstructorGreetingService();
+        propertyInjectedController.greetingServiceImpl = new ConstructorGreetingService();
     }
 
     @Test
     void getGreeting() {
 
-        System.out.println(propertyInjectedController.getGreeting());
+        assertEquals(GreetingServiceImpl.HELLO_MATI, propertyInjectedController.sayHello());
     }
 }
